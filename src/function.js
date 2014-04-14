@@ -1,0 +1,3 @@
+function getFunky(){
+  return "breakdance!";
+}
