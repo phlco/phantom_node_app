@@ -4,6 +4,7 @@ module.exports = function (grunt) {
       // Metadata.
       pkg: grunt.file.readJSON('package.json'),
 
+      // JavaScript testing. Run with `grunt jasmine`
       jasmine : {
         src : 'src/**/*.js',
         options : {
@@ -11,6 +12,7 @@ module.exports = function (grunt) {
         }
       },
 
+      // Guard equivalent. Run with `grunt watch`
       watch: {
         js: {
           files: [
@@ -22,8 +24,9 @@ module.exports = function (grunt) {
       }
     });
 
-     // Unit Testing Task
+    // Unit Testing Task
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.registerTask('default', ['jasmine']);
 
 };

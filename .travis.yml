@@ -2,4 +2,6 @@ language: node_js
 node_js:
   - "0.10"
 before_script:
+# For node projects Travis will run `npm test`
+# By default Travis runs `npm install`
   - npm install -g grunt-cli

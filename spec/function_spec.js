@@ -1,10 +1,17 @@
 describe("functions", function(){
-  it("is a first class citizen", function(){
-    var citizen = function(){};
-    expect( typeof citizen ).toEqual("function");
+
+  describe("declarative functions", function(){
+    it("is loaded before any code is executed.", function(){
+      expect( vamanos ).toBeDefined();
+      function vamanos(){ return "let's go!" }
+    });
   });
-  it("can get funky", function(){
-    var danceMove = getFunky();
-    expect( danceMove ).toEqual("breakdance!");
+
+  describe("function expression", function(){
+    it("loads only when the interpreter reaches that line of code", function(){
+      expect( ohMyGolly ).toBeUndefined();
+      var ohMyGolly = function(){ return "oh my golly!" }
+    });
   });
+
 });
